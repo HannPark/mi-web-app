@@ -4,5 +4,18 @@ import { Component } from '@angular/core';
   selector: 'app-usuario',
   templateUrl: './usuario.component.html',
 })
+export class UsuarioComponent {
+  usuarioNombre = '';
+  usuarios = ['Luis', 'Fernando', 'Maria'];
+  visible= false;
 
-export class UsuarioComponent {}
+  constructor() {
+    setTimeout(() => {
+      this.visible= true;
+    }, 3000);
+  }
+
+  onAgregarUsuario(){
+    this.usuarios.push(this.usuarioNombre);
+  };
+}
