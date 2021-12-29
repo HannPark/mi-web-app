@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LibroComponent } from './libro/libro.component';
 import { LibrosComponent } from './libros/libros.component';
+import { LibrosService } from './services/libros.service';
 import { UsuarioComponent } from './usuario.component';
 
 
@@ -21,7 +22,7 @@ import { UsuarioComponent } from './usuario.component';
     AppRoutingModule,
     FormsModule
   ],
-  providers: [],
+  providers: [LibrosService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
