@@ -11,7 +11,12 @@ export class LibrosService {
 
   agregarLibro(libroNombre: string) {
     this.libros.push(libroNombre);
-    this.librosSubject.next(undefined); //Captura cambios o ejecuciones de agregar libro()
+    this.librosSubject.next(null); //Captura cambios o ejecuciones de agregar libro()
+  }
+
+  eliminarLibro(libroNombre: string){
+    this.libros = this.libros.filter(x => x !== libroNombre);
+    this.librosSubject.next(null);
   }
 
   obtenerLibro() {
