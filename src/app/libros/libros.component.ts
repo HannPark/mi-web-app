@@ -11,7 +11,7 @@ export class LibrosComponent implements OnInit, OnDestroy {
   constructor(private librosService: LibrosService) {}
   private libroSuscripcion: Subscription;
 
-  eliminarLibro(libro: String) {}
+  eliminarLibro(libro: string) {}
 
   guardarLibro(f: any) {
     if (f.valid) {
