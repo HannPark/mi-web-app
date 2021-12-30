@@ -9,6 +9,10 @@ import { LibroComponent } from './libro/libro.component';
 import { LibrosComponent } from './libros/libros.component';
 import { LibrosService } from './services/libros.service';
 import { UsuarioComponent } from './usuario.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
+import { RegistrarComponent } from './seguridad/registrar/registrar.component';
+import { LoginComponent } from './seguridad/login/login.component';
 
 
 @NgModule({
@@ -17,12 +21,16 @@ import { UsuarioComponent } from './usuario.component';
     UsuarioComponent,
     LibrosComponent,
     LibroComponent,
-    InicioComponent
+    InicioComponent,
+    RegistrarComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [LibrosService],
   bootstrap: [AppComponent]
