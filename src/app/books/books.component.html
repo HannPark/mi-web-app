@@ -1,1 +1,31 @@
-<p>books works!</p>
+<div fxLayoutAlign="center center">
+    <mat-form-field fxFlex="60%">
+       <input matInput type="text" (keyup)="hacerFiltro($any($event.target).value)" placeholder="Ingrese texto">
+    </mat-form-field>
+</div>
+
+<mat-table [dataSource]="dataSource" matSort>
+
+  <ng-container matColumnDef="titulo">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Titulo</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.titulo }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="descripcion">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Descripcion</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.descripcion }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="autor">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Autor</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.autor }}</mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="precio">
+    <mat-header-cell *matHeaderCellDef mat-sort-header>Precio</mat-header-cell>
+    <mat-cell *matCellDef="let element">{{ element.precio }}</mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="desplegarColumnas" ></mat-header-row>
+  <mat-row *matRowDef="let row, columns: desplegarColumnas" ></mat-row>
+</mat-table>
