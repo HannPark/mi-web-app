@@ -29,3 +29,11 @@
   <mat-header-row *matHeaderRowDef="desplegarColumnas" ></mat-header-row>
   <mat-row *matRowDef="let row, columns: desplegarColumnas" ></mat-row>
 </mat-table>
+
+<mat-paginator [pageIndex]="2" [pageSizeOptions]="[2, 5, 10, 20]">
+
+</mat-paginator>
+
+<button mat-fab id= "boton-agregar" color="warn" (click)="abrirDialog()">
+  <mat-icon>add</mat-icon>
+</button>
