@@ -1,6 +1,8 @@
 import { Books } from './books.model';
+import { Subject } from 'rxjs';
 
 export class BooksService {
+
   private booksLista: Books[] = [
     {
       libroId: 1,
@@ -32,7 +34,14 @@ export class BooksService {
     },
   ];
 
+  bookSubject = new Subject<Books>(); //observable
+
   obtenerLibros() {
     return this.booksLista.slice();
+  }
+
+  guardarLibro(book: Books){
+    this.booksLista.push(book);
+    this.bookSubject.next(book);
   }
 }

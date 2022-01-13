@@ -19,7 +19,8 @@ import { SeguridadService } from './seguridad/seguridad.service';
 import { BooksComponent } from './books/books.component';
 import { BooksService } from './books/books.service';
 import { bookNuevoComponent } from './books/book-nuevo.component';
-import { MAT_DATE_LOCALE } from '@angular/material/core'; //Definir formato fecha local, VER providers
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+import { AutoresComponent } from './autores/autores.component'; //Definir formato fecha local, VER providers
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { MAT_DATE_LOCALE } from '@angular/material/core'; //Definir formato fech
     MenuListaComponent,
     BooksComponent,
     bookNuevoComponent,
+    AutoresComponent,
   ],
   imports: [
     BrowserModule,
