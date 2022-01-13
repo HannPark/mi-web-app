@@ -19,11 +19,6 @@ export class AutoresService {
     .subscribe((data) => {
       this.autoresLista= data;
       this.autoresSubject.next([...this.autoresLista]);
-<<<<<<< HEAD
-=======
-      console.log(this.autoresSubject);
-
->>>>>>> cfbd2fac56b3a4b55d74a799319487882908c3ad
     })
   }
 
