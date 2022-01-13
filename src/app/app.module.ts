@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { InicioComponent } from './inicio.component';
@@ -20,6 +19,7 @@ import { SeguridadService } from './seguridad/seguridad.service';
 import { BooksComponent } from './books/books.component';
 import { BooksService } from './books/books.service';
 import { bookNuevoComponent } from './books/book-nuevo.component';
+import { MAT_DATE_LOCALE } from '@angular/material/core'; //Definir formato fecha local, VER providers
 
 @NgModule({
   declarations: [
@@ -43,7 +43,7 @@ import { bookNuevoComponent } from './books/book-nuevo.component';
     MaterialModule,
     FlexLayoutModule,
   ],
-  providers: [LibrosService, SeguridadService, BooksService],
+  providers: [LibrosService, SeguridadService, BooksService, {provide: MAT_DATE_LOCALE, useValue: 'es-ES'}],
   bootstrap: [AppComponent],
   entryComponents: [bookNuevoComponent],
 })

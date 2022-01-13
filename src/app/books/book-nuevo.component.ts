@@ -1,16 +1,20 @@
-import { Component } from "@angular/core";
+import { Component, ViewChild } from "@angular/core";
+import { NgForm } from "@angular/forms";
+import { MatDatepicker } from "@angular/material/datepicker";
 
 @Component({
   selector: 'app-book-nuevo',
-  template: `<h1 mat-dialog-title>Dialog para agregar Libro</h1>
-              <mat-dialog-actions>
-                <button mat-button [mat-dialog-close]='true'>Cerrar</button>
-              </mat-dialog-actions>
-            `
+  templateUrl: 'book-nuevo.component.html'
 })
 
+// 11/21/2025 US FORMAT
+// 21/11/2021 LATIN FORMAT VER App.Module
+
 export class bookNuevoComponent {
-  constructor() {
+  selectAutor: string;
+  @ViewChild(MatDatepicker) picker: MatDatepicker<Date>;
+
+  guardarLibro(form: NgForm){
 
   }
 }

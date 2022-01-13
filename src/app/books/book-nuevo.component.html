@@ -1,0 +1,76 @@
+<h2 mat-dialog-title>Agregar Nuevo Libro</h2>
+<mat-dialog-content>
+  <section fxLayoutAlign="center" style="margin-top: 10px; margin-bottom: 10px">
+    <mat-card fxFlex="100%">
+      <form
+        fxLayout="column"
+        fxLayoutAlign="center center"
+        fxLayoutGap="10px"
+        #f="ngForm"
+        (ngSubmit)="guardarLibro(f)"
+      >
+        <mat-form-field style="width: 100%">
+          <mat-label>Ingrese Titulo</mat-label>
+          <input
+            type="text"
+            matInput
+            placeholder="ejem. Libro Galaxias"
+            name="titulo"
+            ngModel
+            required
+          />
+          <mat-error>Debe ingresar el titulo del libro</mat-error>
+        </mat-form-field>
+
+        <mat-form-field style="width: 100%">
+          <mat-label>Ingrese Descripcion</mat-label>
+          <input
+            type="text"
+            matInput
+            placeholder="ejem. Libro creado en 1879"
+            name="descripcion"
+            ngModel
+            required
+          />
+          <mat-error>Debe ingresar la descripcion del libro</mat-error>
+        </mat-form-field>
+
+        <mat-form-field style="width: 100%">
+          <mat-label>Ingrese Precio</mat-label>
+          <input
+            type="text"
+            matInput
+            placeholder="ejem. 89"
+            name="precio"
+            ngModel
+            required
+          />
+          <mat-error>Debe ingresar el precio del libro</mat-error>
+        </mat-form-field>
+
+        <mat-form-field style="width: 100%">
+          <mat-label>Seleccione Autor</mat-label>
+          <mat-select [(ngModel)]="selectAutor" name="autor">
+            <mat-option value="1">Vaxi Drez</mat-option>
+            <mat-option value="2">Nestor Arcila</mat-option>
+            <mat-option value="3">John Ortiz</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field style="width: 100%">
+          <input matInput placeholder="Seleccione Fecha Publicacion" [matDatepicker]="picker">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker ></mat-datepicker>
+        </mat-form-field>
+
+
+
+
+      </form>
+    </mat-card>
+  </section>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button [mat-dialog-close]="true">Cerrar</button>
+  <button mat-button>Guardar</button>
+</mat-dialog-actions>
